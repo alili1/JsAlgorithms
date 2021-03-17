@@ -2,6 +2,7 @@
     background: url('../img/fons/webb-dark.png') repeat;
     padding-top: 15px;
 }
+
 body {
     font-family: 'Raleway', sans-serif;
 }
@@ -13,6 +14,7 @@ body {
     font-size: 16px;
     font-weight: lighter;
     color: #ddeef9;
+    text-decoration: none;
 }
 h4 {
     margin-top: 20px;
@@ -23,7 +25,7 @@ h4 {
     margin: 20px 0 0 0;
 }
 .menuImg__second {
-    margin: 0 10% 0 0;
+    margin: 0 5% 0 0;
 }
 .firstLine {
     margin-top: 10px;
@@ -72,4 +74,21 @@ h1 {
     font-size: 24px;
     line-height: 270%;
     color: #DDEEF9;
+    text-decoration: none;
+}
+
+a:hover {
+  color: #fffefe;
+}
+.footer__menu__names {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.footer__menu__names a
+{
+    text-align: center;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #ddeef9;
+    text-decoration: none;
 }
