@@ -2,28 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="keywords" content="A*, задача коммивояжера, лабиринт, генетический алгоритм">
     <meta name="description" content="Решение задач с графическим интерфейсом">
-    <title>Несколько интересных алгоритмов</title>
+    <title>Алгоритмы</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mainViewStyle.css">
 </head>
 <body>
   <header id="header" class="header">
-   <div class="titleOne">
+      <div class = "container">
        <div class="row" >
-           <div class="col-lg-12 ml-auto">
-               <a href="http://hits.tsu.ru/">
-                Высшая IT школа
-               </a>
-           </div>
+
+                   <ul class="menu d-flex justify-content-center">
+                       <li class="menu__first">
+                           <a href="http://hits.tsu.ru/">
+                               Высшая IT школа
+                           </a>
+                       </li>
+                       <li class="menu__first ">
+                           <a href="#">
+                               Что-то
+                           </a>
+                       </li>
+                       <li class="menu__first ">
+                           <a href="#">
+                               Что-то
+                           </a>
+                       </li>
+                   </ul>
+
        </div>
    </div>
+      <hr class="firstLine"/>
+      <h4 class="sources" align="center">
+        Полезные статьи
+      </h4>
+      <div class="container">
+          <div class="row"></div>
+          <div class="col-lg-12 ml-auto">
+          <nav>
+              <ul class="menuImg d-flex justify-content-center">
+                  <li class="menuImg__second d-flex align-items-center">
+                      <a href="#">
+                          <img src="img/mainImage/aStar.jpg" class="dnk" title="А*">
+                      </a>
+                  </li>
+                  <li class="menuImg__second d-flex align-items-center">
+                      <a href="#">
+                          <img src="img/mainImage/cluster.jpg" class="dnk" title="Алгоритм кластеризации">
+                      </a>
+                  </li>
+                  <li class="menuImg__second d-flex align-items-center">
+                      <a href="#">
+                          <img src="img/mainImage/DNA.jpg" class="dnk" title="Генетический алгоритм">
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+          </div>
+      </div>
+      </div>
   </header>
-  <main>
-      <h1>
-          Список задач
+  <main class="mainAct">
+      <hr class="secondLine"/>
+      <h1 align="center">
+          Реализованные алгоритмы
       </h1>
-      <ol>
+      <div class="algorithm" align="left">
+          <div class="col-lg-5 ml-auto">
+       <ul class="tasks">
           <li>
               <a href = "task1/task1.html">
                   Первое задание
@@ -54,7 +103,10 @@
                   Шестое задание
               </a>
           </li>
-      </ol>
+      </ul>
+          </div>
+      </div>
+      </div>
   </main>
 <footer>
 

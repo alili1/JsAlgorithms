@@ -1,0 +1,75 @@
+.header, .mainAct, .footer{
+    background: url('../img/fons/webb-dark.png') repeat;
+    padding-top: 15px;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+}
+.menu__first {
+    margin: 0 10% 0 0;
+}
+.menu__first a {
+    text-align: center;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #ddeef9;
+}
+h4 {
+    margin-top: 20px;
+    font-weight: lighter;
+    color: #b4c4d0;
+}
+.menuImg {
+    margin: 20px 0 0 0;
+}
+.menuImg__second {
+    margin: 0 10% 0 0;
+}
+.firstLine {
+    margin-top: 10px;
+    height: 2px;
+    border: none;
+    color: #ddeef9;
+}
+.secondLine {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 2px;
+    border: none;
+    color: #ddeef9;
+}
+.dnk {
+    height: 150px;
+    border-radius: 3%;
+    border: 2px solid #D3EAF9;
+}
+h1 {
+    margin-top: 20px;
+    font-weight: lighter;
+    color: #DDEEF9;
+}
+.algorithm {
+    display: flex;
+    justify-content: center;
+}
+
+.tasks {
+    border: solid 4px #95a4b0;
+    border-radius: 3%;
+    margin-top: 30px;
+    background-color: #3b414b;
+}
+.tasks li {
+    list-style-type: none;
+}
+.tasks li:before {
+    color: #c6d6e2; /* Цвет маркера */
+    content: "\2022";
+    padding-right: 5px; /* Расстояние от маркера до текста */
+}
+.tasks a {
+    text-align: left;
+    font-size: 24px;
+    line-height: 270%;
+    color: #DDEEF9;
+}
