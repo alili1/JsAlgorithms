@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../task2/css/task2.css">
 </head>
 
-<body>
+<body onLoad="circle()">
 <main class="mainActivitySecondTask">
     <h1 class="mainName">
         Кластер
@@ -23,12 +23,10 @@
                 Расставьте точки
             </h4>
         </div>
-        <div class="box2" id="toDraw">
-            <div class="table">
-              <canvas id="pointField">
+        <div class="box2" id="toDraw" onload="draw();">
+              <canvas id="pointField"  width="1000" height="600">
 
               </canvas>
-            </div>
         </div>
         <div class="box3">
                 <h4 class="menu">
@@ -92,4 +90,6 @@
         </div>
     </div>
 </footer>
+
+<script src="task2.js"></script>
 </body>
