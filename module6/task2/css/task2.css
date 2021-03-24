@@ -1,0 +1,121 @@
+.mainActivitySecondTask, .footer{
+    background: url('../../img/fons/connectwork.png') repeat;
+    padding-top: 30px;
+}
+.mainActivitySecondTask {
+    padding-bottom: 30px;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #c6d6e2;
+}
+
+h1 {
+    text-align: center;
+    margin-left: -55px;
+    color: #DDEEF9;
+}
+
+hr.firstLine, hr.secondLine {
+    height: 4px;
+    border: none;
+    color: #cde2fa;
+}
+
+hr.firstLine {
+    margin-top: 30px;
+}
+
+h3 {
+    margin-top: 15px;
+}
+
+h4 {
+    padding-top: 20px;
+    font-weight: lighter;
+    color: #f5f8ff;
+}
+
+h4.menu {
+    text-align: center;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: auto;
+
+}
+.box1 {
+    margin-left: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.box2 {
+    margin-left: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+.table {
+    height: 700px;
+    margin-top: 20px;
+    max-width: 100%;
+    background-color: #f5f8ff;
+    border: 4px solid #718296;
+}
+
+.sidebar {
+    padding-right: 4px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 70px;
+    height: auto; /* Full-height: remove this if you want "auto" height */
+    width: 65%; /* Set the width of the sidebar */
+    border: 4px solid #718296;
+    background-color: #f5f8ff; /* Black */
+    padding-top: 20px;
+}
+
+.sidebar__menu a {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 200%;
+    color: #78899f;
+    text-decoration: none;
+}
+a.toMain {
+    font-size: 20px;
+}
+a:hover {
+    color: #5b687e;
+}
+.sidebar__menu li {
+    list-style-position: outside;
+    list-style-type: none;
+}
+
+.footer__menu__names {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.footer__menu__names:nth-child(2) {
+    margin-left: 20%;
+}
+.footer__menu__names a
+{
+    text-align: center;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #ddeef9;
+    text-decoration: none;
+}
+
+.footer__menu li {
+    list-style-type: none;
+}
