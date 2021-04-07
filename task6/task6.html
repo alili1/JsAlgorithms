@@ -2,56 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="генетический алгоритм">
-    <meta name="description" content="Генетический алгоритм">
-    <title>A*</title>
+    <meta name="keywords" content="нейронные сети, искусственный разум, распознавание цифр">
+    <meta name="description" content="нейронные сети">
+    <title>Нейронная сеть</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../task3/css/task3.css">
+    <link rel="stylesheet" href="../task6/css/task6.css">
+    <script src="brain.js"></script>
 </head>
 
 <body>
-<main class="mainActivityThirdTask">
+<main class="mainActivitySixTask">
     <h1 class="mainName">
-        Генетический алгоритм
+        Нейронная сеть
     </h1>
     <hr class="firstLine"/> <!-- почему такая маленькая ширина линии? -->
     <div class="mainContent">
         <div class="box1">
-            <h4 class="field">
-                Построение графа
+            <h4>
+                Изобразите любую цифру
             </h4>
         </div>
         <div class="box2" id="toDraw">
-            <div class="table">
+            <canvas id="pointField"  width="1000" height="600">
 
-            </div>
+            </canvas>
         </div>
-        <div class="box3">
-            <h4 class="secondName">
-                Выберете своего персонажа
-            </h4>
-        </div>
-        <div class="box4 d-inline-block" align="center">
-                    <button class="btn" id="but1" >
-                        <img src="css/iconsBut/airplane.png" >
-                    </button>
-
-                    <button class="btn" id="but2">
-                        <img src="css/iconsBut/male.png">
-                    </button>
-
-                    <button class="btn" id="but3">
-                        <img src="css/iconsBut/unicorn.png">
-                    </button>
-
+        <div class="box3" align="center">
+            <input type="button" class="pushOnMe" value="Угадать цифру">
         </div>
         <div class="box4">
             <div class="toOtherPage">
-              <h4>
-                  Алгоритмы
-              </h4>
+                <h4 class="menu">
+                    Алгоритмы
+                </h4>
             </div>
         </div>
         <div class="box5">
@@ -62,34 +47,38 @@
                             На главную
                         </a>
                     <li>
-                        <a href = "../task2/task2.html">
-                            Алгоритм кластеризации
+                        <a href = "../task1/task1.html">
+                            A*
                         </a>
                     </li>
                     <li>
                         <a href = "../task3/task3.html">
-                            Генетический алгоритм
+                            Алгоритм кластеризации
                         </a>
                     </li>
                     <li>
                         <a href = "../task4/task4.html">
-                            Муравьиный алгоритм
+                            Генетический алгоритм
                         </a>
                     </li>
                     <li>
                         <a href = "../task5/task5.html">
-                            Дерево решений
+                            Муравьиный алгоритм
                         </a>
                     </li>
                     <li>
                         <a href = "../task6/task6.html">
-                            Нейронная сеть
+                            Дерево решений
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div><!-- почему такая маленькая ширина линии? -->
+        <div class="box6" align="center">
+            <input type="button" class="pushOnMeSecond" value="Стереть все цифры" onclick="clearAll()">
+        </div>
+    </div>
+    <!-- почему такая маленькая ширина линии? -->
 </main>
 <footer class="footer">
     <hr class="secondLine"/>
@@ -110,8 +99,6 @@
         </div>
     </div>
 </footer>
-<script src="p5.js"></script>
-<script src="preparation.js"></script>
-<script src="sketch.js"></script>
-<script src="AStar.js"></script>
+<script src="task6.js"></script>
+<script src="clear.js"></script>
 </body>

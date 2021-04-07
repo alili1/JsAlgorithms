@@ -12,6 +12,9 @@
 </head>
 
 <body onLoad="circle()">
+<script src = "set.js"> </script>
+<script src = "k-means.js"> </script>
+<script src = "hierarchy.js"> </script>
 <main class="mainActivitySecondTask">
     <h1 class="mainName">
         Кластер
@@ -28,12 +31,28 @@
 
               </canvas>
         </div>
-        <div class="box3">
+        <div class="box3" align="center">
+            <h4>
+            Введите количество кластеров
+            </h4>
+        </div>
+        <div class="box3" align="center">
+            <input class="size" type="number" placeholder="Ваше число" id="inputNumber" value="3">
+            <input type="button" value="Отправить" onclick="createNumber()">
+        </div>
+        <div class="box3" align="center">
+            <button class="btn, pushOnMe" onclick="Start()">
+                Начать кластеризацию
+            </button>
+        </div>
+        <div class="box4">
+            <div class="toOtherPage">
                 <h4 class="menu">
                     Алгоритмы
                 </h4>
+            </div>
         </div>
-        <div class="box4">
+        <div class="box5">
             <div class="sidebar">
                 <ul class="sidebar__menu">
                     <li>
@@ -68,6 +87,11 @@
                 </ul>
             </div>
         </div>
+        <div class="box6" align="center">
+            <button class="btn, pushOnMeSecond" onclick="clearAll()">
+            Стереть все кластеры
+            </button>
+        </div>
     </div>
     <!-- почему такая маленькая ширина линии? -->
 </main>
@@ -90,6 +114,5 @@
         </div>
     </div>
 </footer>
-
 <script src="task2.js"></script>
 </body>

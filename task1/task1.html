@@ -13,39 +13,52 @@
 </head>
 
 <body>
+<script src="preparation.js"></script>
+<script src="AStar.js"></script>
 <main class="mainActivityFirstTask">
-  <h1 class="mainName">
+  <h1 class="mainName" align="center">
     Лабиринт
   </h1>
   <hr class="firstLine"/> <!-- почему такая маленькая ширина линии? -->
   <div class="mainContent">
     <div class="box1">
-      <h4 class="field">
+      <h3 class="field">
         Поле для игры
-      </h4>
+      </h3>
     </div>
-    <div class="box2" id="toDraw">
-
+    <div class="box2" id="toDraw" onload="draw();">
+      <canvas id="pointField" width="950" height="950"> </canvas>
     </div>
     <div class="box3">
-      <h4 class="secondName">
-        Введите размеры поля в виде целого числа от 3 до 50
-      </h4>
+      <h5 class="secondName" align="center">
+        Введите размеры поля в виде целого числа от 15 до 55
+      </h5>
     </div>
-    <div class="box4">
+    <div class="box4" align="center">
         <input class="size" type="number" placeholder="Ваше число" id="inputNumber" value="15">
-          <button id="inputBut">
-            Отправить
-          </button>
+      <input type="button" value="Отправить" onclick="CreateMaze()">
     </div>
-    <div class="box5">
+    <div class="box5" align="center">
+      <button class="btn" id="but1" onclick="ChangingStart()">
+        Добавить стартовую клетку
+      </button>
+      <br>
+      <button class="btn" id="but2" onclick="ChangingStop()">
+        Добавить конечную клетку
+      </button>
+      <br>
+      <button class="btn" id="but3" onclick="A()">
+        начни свой путь!
+      </button>
+    </div>
+    <div class="box6">
       <div class="toOtherPage">
         <h4>
           Алгоритмы
         </h4>
       </div>
     </div>
-    <div class="box6">
+    <div class="box7">
       <div class="sidebar">
         <ul class="sidebar__menu">
           <li>
@@ -101,9 +114,5 @@
     </div>
   </div>
 </footer>
-<script src="p5.js"></script>
- <script src="preparation.js"></script>
- <script src="sketch.js"></script>
-<script src="AStar.js"></script>
 </body>
 

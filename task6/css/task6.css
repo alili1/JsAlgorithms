@@ -1,8 +1,8 @@
-.mainActivitySecondTask, .footer{
+.mainActivitySixTask, .footer{
     background: url('../../img/fons/connectwork.png') repeat;
     padding-top: 30px;
 }
-.mainActivitySecondTask {
+.mainActivitySixTask {
     padding-bottom: 30px;
 }
 
@@ -32,7 +32,8 @@ h3 {
 }
 
 h4 {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: lighter;
     color: #f5f8ff;
 }
@@ -60,21 +61,56 @@ h4.menu {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
-    grid-row-end: 5;
+    grid-row-end: 6;
 }
+
+.box3 {
+    margin-top: 20px;
+}
+
+.box3, .box4, .box5, .box6 {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.toOtherPage {
+    margin-top: 20px;
+    border: 3px solid transparent;
+    border-top: ridge #cde2fa;
+    border-bottom: ridge #cde2fa;
+}
+
+.toOtherPage:nth-child(1)
+{
+    text-align: center;
+}
+.pushOnMe, .pushOnMeSecond {
+    background: #b9c8da;
+    border: 3px solid #5e7896;
+    font-size: 20px;
+}
+
+.pushOnMeSecond {
+    margin-top: 20px;
+}
+
+input:focus {
+    background-color: #ffffff; /* Green border */
+}
+
 #pointField {
     margin-top: 20px;
     max-width: 100%;
-    border: 2px dashed #f5f8ff;
+    background-color: #f5f8ff;
+    border: 4px solid #718296;
 }
 
 .sidebar {
     padding-right: 4px;
     text-align: left;
     margin-top: 20px;
-    margin-left: 70px;
     height: auto; /* Full-height: remove this if you want "auto" height */
-    width: 65%; /* Set the width of the sidebar */
+    width: 100%; /* Set the width of the sidebar */
     border: 4px solid #718296;
     background-color: #f5f8ff; /* Black */
     padding-top: 20px;
