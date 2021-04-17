@@ -1,45 +1,48 @@
+body,
+html {
+    background: url("../../img/fons/webb-dark.png") repeat;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 80px;
+}
+
+footer {
+    height: 80px;
+    margin-top: -80px;
+}
 .mainActivityFourthTask, .footer {
-    background: url("../../img/fons/webb-dark.png");
+    background: url("../../img/fons/webb-dark.png") repeat;
     padding-top: 30px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #c6d6e2;
 }
 .mainActivityFourthTask {
     padding-bottom: 30px;
 }
-
-body {
-    font-family: 'Nanum Gothic', sans-serif;
-    color: #c6d6e2;
-}
-
 h1 {
     text-align: center;
     margin-left: -55px;
     color: #DDEEF9;
 }
-
 hr.firstLine, hr.secondLine {
     height: 4px;
     border: none;
     color:  #f5f8ff;
 }
-
 hr.firstLine {
     margin-top: 30px;
 }
-
 h3 {
     margin-top: 15px;
 }
-
 h4 {
+    text-align: center;
     font-weight: lighter;
     color: #f5f8ff;
 }
-
-h4.menu {
-    text-align: center;
-}
-
 .mainContent {
     display: grid;
     padding-top: 15px;
@@ -47,45 +50,45 @@ h4.menu {
     grid-auto-rows: auto;
 
 }
-.box1 {
+.titleOfField {
     margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
 }
-
-.box2 {
+.fieldToDraw {
     margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
-    grid-row-end: 11;
+    grid-row-end: 12;
 }
-
-.box3, .box31, .box6, .box7, .box8, .box9 {
+.titleSettings, .menuOfSettings, .btnStart, .nameOfOutputFirst, .outputFirst, .btnEnd, .btnClear {
     margin-left: 5%;
     margin-right: 5%;
 }
-.box3, .box6 {
+
+.titleSettings, .btnStart, .btnEnd, .btnClear, .outputFirst {
     text-align: center;
 }
 
-.box3 {
+.btnStart, .btnEnd, .nameOfOutputFirst, .outputFirst, .btnClear {
+    margin-top: 10px;
+}
+.titleSettings {
 margin-top: 10px;
 }
 
-.box31 {
+.menuOfSettings {
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 5% 20px 5%;
     height: auto;
     border: 4px solid #718296;
     background-color: #f5f8ff; /* Black */
 }
+
 .diffSettings {
     display: grid;
     grid-template-areas: "celltext1 myRange1 result1"
@@ -207,32 +210,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #start {
-    font-size: 16px;
-    background-color: #f5f8ff;
     margin-left: 5px;
     border-radius: 4%;
-    border: 3px solid #a0aebe;
-}
-.box4 {
-    margin-top: 20px;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
-
-#rezult {
-    font-size: 16px;
     background-color: #f5f8ff;
-    margin-left: 5px;
-    border-radius: 4%;
     border: 3px solid #a0aebe;
-}
-.box6 {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.box7 {
-    text-align: center;
+    font-size: 16px;
 }
 
 .toOtherPage {
@@ -242,7 +224,7 @@ input[type=range]:focus::-ms-fill-upper {
     border-bottom: ridge #f5f8ff;
 }
 
-.toOtherPage:nth-child(1)
+.toOtherPage:first-child
 {
     text-align: center;
 }
@@ -258,13 +240,13 @@ input[type=range]:focus::-ms-fill-upper {
     font-weight: bold;
 }
 .btn {
-    font-size: 16px;
-    color: #960912;
-    background-color: #f5f8ff;
     margin-left: 5px;
     border-radius: 4%;
+    cursor: pointer;
+    background-color: #f5f8ff;
     border: 3px solid #960912;
-    cursor: pointer; /* Pointer/hand icon */
+    font-size: 16px;
+    color: #960912;
 }
 
 button:focus {
@@ -277,9 +259,9 @@ button:focus {
     padding-right: 5%;
     padding-top: 20px;
     text-align: left;
-    height: auto; /* Full-height: remove this if you want "auto" height */
+    height: auto;
     border: 4px solid #718296;
-    background-color: #f5f8ff; /* Black */
+    background-color: #f5f8ff;
 }
 
 .sidebar__menu a {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="кластеризация, кластеры">
-    <meta name="description" content="Алгоритм А*">
+    <meta name="description" content="Алгоритм кластеризации">
     <title>Алгоритм кластеризации</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&family=Raleway&display=swap" rel="stylesheet">
@@ -12,47 +12,48 @@
 </head>
 
 <body onLoad="circle()">
-<script src = "set.js"> </script>
-<script src = "k-means.js"> </script>
-<script src = "hierarchy.js"> </script>
+<script src = "set.js"></script>
+<script src = "k-means.js"></script>
+<script src = "hierarchy.js"></script>
+<div class="wrapper">
 <main class="mainActivitySecondTask">
-    <h1 class="mainName">
+    <h1>
         Кластер
     </h1>
-    <hr class="firstLine"/> <!-- почему такая маленькая ширина линии? -->
+    <hr class="firstLine"/>
     <div class="mainContent">
-        <div class="box1">
-            <h4>
+        <div class="titleOfField">
+            <h3>
                 Расставьте точки
-            </h4>
+            </h3>
         </div>
-        <div class="box2" id="toDraw" onload="draw();">
-              <canvas id="pointField"  width="1000" height="600">
-
-              </canvas>
+        <div class="fieldToDraw" id="toDraw" onload="draw();">
+              <canvas id="pointField"  width="1000" height="600"></canvas>
         </div>
-        <div class="box3" align="center">
+        <div class="titleOfInputNumber">
             <h4>
-            Введите количество кластеров
+            Введите количество кластеров (не более 6)
             </h4>
         </div>
-        <div class="box3" align="center">
-            <input class="size" type="number" placeholder="Ваше число" id="inputNumber" value="3">
+        <div class="inputField">
+            <input class="inputYourNumber" type="number" placeholder="Ваше число" id="inputNumber" value="3">
             <input type="button" value="Отправить" onclick="createNumber()">
         </div>
-        <div class="box3" align="center">
+        <div class="butOfStart">
             <button class="btn, pushOnMe" onclick="Start()">
-                Начать кластеризацию
+                Алгоритм k-means
             </button>
         </div>
-        <div class="box4">
+        <div class="butOfStart">
+            <button class="btn, pushOnMe" onclick="hierarchy()">
+                Иерархический алгоритм
+            </button>
+        </div>
             <div class="toOtherPage">
-                <h4 class="menu">
+                <h4>
                     Алгоритмы
                 </h4>
             </div>
-        </div>
-        <div class="box5">
             <div class="sidebar">
                 <ul class="sidebar__menu">
                     <li>
@@ -86,15 +87,14 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="box6" align="center">
-            <button class="btn, pushOnMeSecond" onclick="clearAll()">
+        <div class="btnClear">
+            <button class="btn, pushOnMeSecond" onClick="window.location.reload()">
             Стереть все кластеры
             </button>
         </div>
     </div>
-    <!-- почему такая маленькая ширина линии? -->
 </main>
+</div>
 <footer class="footer">
     <hr class="secondLine"/>
     <div class = "container">

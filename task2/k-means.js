@@ -1,4 +1,3 @@
-let n;
 const colors = ["#000080", "#ffff00", "#008080", "#800080", "#00ff00", "#ff00ff"];
 function randomInteger(min, max) 
 {
@@ -11,7 +10,7 @@ function GetDistance(A, B)
     let CurrentY = A.y - B.y;
     return Math.sqrt(Math.pow(CurrentX, 2) + Math.pow(CurrentY, 2));
 }
-function DrawCenters(centers, e)
+function DrawCenters(centers)
 {
     for(let i = 0; i < centers.length; i++)
     { 
@@ -28,34 +27,54 @@ function DrawCenters(centers, e)
         context.stroke();
     }
 }
-function DrawClasters(point, e)
+function DrawClasters(point, color)
 {
     context.beginPath();
     context.moveTo(point.x, point.y);
     
     let x = point.x;
     let y = point.y; 
-    context.arc(x, y, 12, Math.PI/2, 3*Math.PI/2);
-    context.fillStyle = colors[point.number];
+    context.arc(x, y, 9, 0, 2*Math.PI);
+    context.fillStyle = colors[color];
     context.fill();
     context.lineWidth = 1;
-    context.strokeStyle = colors[point.number];
+    context.strokeStyle = colors[color];
     context.stroke();
     
 }
-function createNumber() {
-    n = document.getElementById('inputNumber').value;
+let centers;
+function Start()
+{
+    let BestResult = Number.MAX_VALUE, CurrentSum;
+    let BestCombination = [], BestCenters = [];
+    let n = document.getElementById('inputNumber').value;
+    n = Math.min(points.length, n);
+    for(let i = 0; i < 17; i++)
+    {   
+        algorithm(n);
+        CurrentSum = 0;
+        for(let j = 0; j < points.length; j++)
+            CurrentSum += GetDistance(points[j], centers[points[j].number]);
+        if (CurrentSum < BestResult)
+        {
+            BestCenters = centers.slice();
+            BestResult = CurrentSum;
+            BestCombination.length = 0;
+            for (let j = 0; j < points.length; j++)
+                BestCombination.push(points[j].number);
+        }
+    }
+    for(let i = 0; i < points.length; i++)
+        DrawClasters(points[i], BestCombination[i]);
+    DrawCenters(BestCenters);
 }
-
-function algorithm()
+function algorithm(n)
 {
    Changing = false;
-   //инициализация
 
-   let centers = []; let sum;  
+   centers = []; let sum;  
    let min, NumOfMin, temp, rnd, index;
    let NumOfCenters = 1;
-   //centers[0] = points[0];
    centers[0] = new Point(points[0].x, points[0].y);
    let arrmins = [];
 
@@ -91,9 +110,6 @@ function algorithm()
             index++;
         }
 
-        while (points[index-1] == true)
-            index--;
-        //centers.push(points[index-1]);
         centers.push(new Point(points[index-1].x, points[index - 1].y));
         points[index-1].center = true;
         NumOfCenters++;
@@ -137,12 +153,12 @@ function algorithm()
             centers[points[i].number].number++;
        }
 
-       for(let i = 0; i < n; i++)
+       for (let i = 0; i < n; i++)
         {
             centers[i].x = centers[i].x / centers[i].number;
             centers[i].y = centers[i].y / centers[i].number;
         }
+        for(let i = 0; i < points.length; i++)
+            points[i].center = false;       
    }
-   //DrawClasters(points);
-   //DrawCenters(centers);
 }

@@ -1,14 +1,27 @@
-.header, .mainAct, .footer{
+body,
+html {
+    background: url('../img/fons/webb-dark.png') repeat;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 80px;
+}
+
+footer {
+    height: 80px;
+    margin-top: -80px;
+}.header, .mainAct, .footer {
+    font-family: 'Raleway', sans-serif;
     background: url('../img/fons/webb-dark.png') repeat;
     padding-top: 15px;
 }
 
-body {
-    font-family: 'Raleway', sans-serif;
-}
 .menu__first {
     margin: 0 10% 0 0;
 }
+
 .menu__first a {
     text-align: center;
     font-size: 16px;
@@ -16,6 +29,7 @@ body {
     color: #ddeef9;
     text-decoration: none;
 }
+
 h4 {
     text-align: center;
     margin-top: 20px;
@@ -23,12 +37,15 @@ h4 {
     font-weight: lighter;
     color: #b4c4d0;
 }
+
 .menuImg {
     margin: 20px 0 0 0;
 }
+
 .menuImg__second {
     margin: 0 5% 0 0;
 }
+
 hr.line {
     margin-top: 10px;
     height: 3px;
@@ -36,16 +53,18 @@ hr.line {
     color: #ddeef9;
 }
 
-.dnk {
+.image {
     height: 150px;
     border-radius: 3%;
     border: 2px solid #D3EAF9;
 }
+
 h1 {
     margin-top: 20px;
     font-weight: lighter;
     color: #DDEEF9;
 }
+
 .algorithm {
     display: flex;
     justify-content: center;
@@ -57,14 +76,17 @@ h1 {
     margin-top: 30px;
     background-color: #3b414b;
 }
+
 .tasks li {
     list-style-type: none;
 }
+
 .tasks li:before {
     color: #c6d6e2; /* Цвет маркера */
     content: "\2022";
     padding-right: 5px; /* Расстояние от маркера до текста */
 }
+
 .tasks a {
     text-align: left;
     font-size: 24px;
@@ -76,13 +98,16 @@ h1 {
 a:hover {
   color: #fffefe;
 }
+
 .footer__menu__names {
     margin-bottom: 15px;
     margin-top: 20px;
 }
+
 .footer__menu__names:nth-child(2) {
     margin-left: 20%;
 }
+
 .footer__menu__names a
 {
     text-align: center;

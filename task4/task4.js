@@ -1,10 +1,6 @@
 var canvas;
 var context;
-let number = 0;
-const COLOR_red = "#960912";
-const COLOR_White = "#ffffff";
-var el = document.getElementById('path');
-
+const COLOR_White = "#960912";
 class Point
 {
     constructor(x, y)
@@ -21,14 +17,6 @@ window.onload = function()
     canvas.onmousedown = startDrawing;
 }
 var Changing = true;
-
-function doText(x, y, number) {
-    context.lineWidth = 1;
-    context.fillStyle = COLOR_red;
-    context.font      = "16px sans-serif";
-    context.fillText(number, x-7, y+5);
-}
-
 function startDrawing(e)
 {
     if (Changing == true)
@@ -38,21 +26,15 @@ function startDrawing(e)
 
         let x = e.pageX - canvas.offsetLeft;
         let y = e.pageY - canvas.offsetTop;
-        number++;
+
         points.push(new Point(x, y));
         console.log(points.length);
 
-        context.arc(x, y, 15, 0, 2*Math.PI);
-        context.lineWidth = 2;
-        context.strokeStyle = COLOR_red;
-        context.stroke();
+        context.arc(x, y, 7, 0, 2*Math.PI);
         context.fillStyle = COLOR_White;
         context.fill();
-        doText(x, y, number);
+        context.lineWidth = 1;
+        context.strokeStyle = COLOR_White;
+        context.stroke();
     }
-}
-
-function getPath (best)
-{
-    el.value = Math.round(best);
 }

@@ -1,0 +1,184 @@
+body,
+html {
+    background: url('../../img/fons/connectwork.png') repeat;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 80px;
+}
+
+footer {
+    height: 80px;
+    margin-top: -80px;
+}
+
+.mainActivityFiveTask, .footer{
+    background: url('../../img/fons/connectwork.png') repeat;
+    padding-top: 30px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #c6d6e2;
+}
+
+.mainActivityFiveTask {
+    padding-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-left: -55px;
+    color: #DDEEF9;
+}
+
+h3 {
+    margin-top: 15px;
+}
+
+h4 {
+    text-align: center;
+    font-weight: lighter;
+    color: #f5f8ff;
+}
+
+hr.firstLine, hr.secondLine {
+    height: 4px;
+    border: none;
+    color: #cde2fa;
+}
+
+hr.firstLine {
+    margin-top: 30px;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: auto;
+}
+
+.titleOfField {
+    margin-left: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.fieldToDraw {
+    margin-left: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 7;
+}
+
+#pointField {
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #f5f8ff;
+    border: 4px solid #718296;
+}
+
+.titleOfInputNumber, .inputField, .butOfStart, .toOtherPage, .sidebar, .btnClear {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.titleOfInputNumber, .inputField, .butOfStart {
+    text-align: center;
+}
+
+.inputYourNumber {
+    margin-top: 10px;
+    min-width: 25%;
+    border-radius: 5%;
+    background-color: #ddeef9;
+    border: 2px solid #487EA2;
+    color: #2b5577;
+}
+
+.toOtherPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: 3px solid transparent;
+    border-top: ridge #cde2fa;
+    border-bottom: ridge #cde2fa;
+}
+
+.pushOnMe, .pushOnMeSecond {
+    margin-left: 5px;
+    border-radius: 4%;
+    cursor: pointer;
+    background-color: #f5f8ff;
+    border: 3px solid #960912;
+    font-size: 20px;
+    color: #960912;
+}
+
+.pushOnMeSecond {
+    margin-top: 20px;
+}
+
+.btn:focus {
+    background-color: #ffffff;
+}
+
+.sidebar {
+    padding-top: 20px;
+    margin-top: 10px;
+    height: auto;
+    border: 4px solid #718296;
+    background-color: #f5f8ff;
+    text-align: left;
+}
+
+.sidebar__menu a {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 200%;
+    color: #78899f;
+    text-decoration: none;
+}
+
+a.toMain {
+    font-size: 20px;
+}
+
+a:hover {
+    color: #5b687e;
+}
+
+.sidebar__menu li {
+    list-style-position: outside;
+    list-style-type: none;
+}
+
+.btnClear {
+    text-align: center;
+}
+
+.footer__menu__names {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.footer__menu__names:nth-child(2) {
+    margin-left: 20%;
+}
+
+.footer__menu__names a
+{
+    text-align: center;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #ddeef9;
+    text-decoration: none;
+}
+
+.footer__menu li {
+    list-style-type: none;
+}

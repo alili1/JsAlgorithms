@@ -20,7 +20,8 @@ class Point
     }
 }
 let points = [];
-window.onload = function() {
+window.onload = function()
+{
     canvas = document.getElementById("pointField");
     context = canvas.getContext("2d");
     canvas.onmousedown = startDrawing;

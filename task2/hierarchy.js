@@ -1,11 +1,7 @@
-function temp()
-{
-    alert(screen.width);
-}
 function hierarchy()
 {
-    let n = document.getElementById('inputNumber').value; // число кластеров
-    let NumOfClusters = points.length;
+    let n = document.getElementById('inputNumber').value;
+    n = Math.min(points.length, n);
     let centers = [];
     for (let i = 0; i < points.length; i++)
     {
@@ -47,7 +43,7 @@ function hierarchy()
 
        centers.splice(minB, 1);
     }
-
-   // DrawClasters2(points);
-   // DrawCenters(centers);
+    for(let i = 0; i < points.length; i++)
+        DrawClasters(points[i], points[i].number);
+    DrawCenters(centers);
 }

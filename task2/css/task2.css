@@ -1,20 +1,43 @@
+body,
+html {
+    background: url('../../img/fons/connectwork.png') repeat;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 80px;
+}
+
+footer {
+    height: 80px;
+    margin-top: -80px;
+}
 .mainActivitySecondTask, .footer{
     background: url('../../img/fons/connectwork.png') repeat;
     padding-top: 30px;
-}
-.mainActivitySecondTask {
-    padding-bottom: 30px;
-}
-
-body {
     font-family: 'Nanum Gothic', sans-serif;
     color: #c6d6e2;
+}
+
+.mainActivitySecondTask {
+    padding-bottom: 30px;
 }
 
 h1 {
     text-align: center;
     margin-left: -55px;
     color: #DDEEF9;
+}
+
+h3 {
+    margin-top: 15px;
+}
+
+h4 {
+    text-align: center;
+    font-weight: lighter;
+    color: #f5f8ff;
 }
 
 hr.firstLine, hr.secondLine {
@@ -27,28 +50,13 @@ hr.firstLine {
     margin-top: 30px;
 }
 
-h3 {
-    margin-top: 15px;
-}
-
-h4 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: lighter;
-    color: #f5f8ff;
-}
-
-h4.menu {
-    text-align: center;
-}
-
 .mainContent {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-auto-rows: auto;
-
 }
-.box1 {
+
+.titleOfField {
     margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -56,77 +64,75 @@ h4.menu {
     grid-row-end: 2;
 }
 
-.box2 {
+.fieldToDraw {
     margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
-    grid-row-end: 7;
+    grid-row-end: 8;
 }
 
-.box3 {
-    margin-top: 20px;
+#pointField {
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #f5f8ff;
+    border: 4px solid #718296;
 }
 
-.box3, .box4, .box5, .box6 {
+.titleOfInputNumber, .inputField, .butOfStart, .toOtherPage, .sidebar, .btnClear {
     margin-left: 5%;
     margin-right: 5%;
 }
 
+.titleOfInputNumber, .inputField, .butOfStart {
+    text-align: center;
+}
+
+.inputYourNumber {
+    margin-top: 10px;
+    min-width: 25%;
+    border-radius: 5%;
+    background-color: #ddeef9;
+    border: 2px solid #487EA2;
+    color: #2b5577;
+}
+
 .toOtherPage {
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     border: 3px solid transparent;
     border-top: ridge #cde2fa;
     border-bottom: ridge #cde2fa;
 }
 
-.toOtherPage:nth-child(1)
-{
-    text-align: center;
-}
 .pushOnMe, .pushOnMeSecond {
-    color: #960912;
-    background-color: #f5f8ff;
     margin-left: 5px;
-    font-size: 20px;
     border-radius: 4%;
+    cursor: pointer;
+    background-color: #f5f8ff;
     border: 3px solid #960912;
-    cursor: pointer; /* Pointer/hand icon */
+    font-size: 20px;
+    color: #960912;
 }
 
 .pushOnMeSecond {
     margin-top: 20px;
 }
 
-.size {
-    margin-top: 10px;
-    background-color: #ddeef9;
-    border-radius: 5%;
-    min-width: 25%;
-    border: 2px solid #487EA2;
-    color: #2b5577;
-}
-
-btn:focus {
-    background-color: #ffffff; /* Green border */
-}
-
-#pointField {
-    margin-top: 20px;
-    max-width: 100%;
-    background-color: #f5f8ff;
-    border: 4px solid #718296;
+.btn:focus {
+    background-color: #ffffff;
 }
 
 .sidebar {
-    padding-right: 4px;
-    text-align: left;
-    margin-top: 20px;
-    height: auto; /* Full-height: remove this if you want "auto" height */
-    width: 100%; /* Set the width of the sidebar */
-    border: 4px solid #718296;
-    background-color: #f5f8ff; /* Black */
     padding-top: 20px;
+    margin-top: 10px;
+    height: auto;
+    border: 4px solid #718296;
+    background-color: #f5f8ff;
+    text-align: left;
 }
 
 .sidebar__menu a {
@@ -136,24 +142,33 @@ btn:focus {
     color: #78899f;
     text-decoration: none;
 }
+
 a.toMain {
     font-size: 20px;
 }
+
 a:hover {
     color: #5b687e;
 }
+
 .sidebar__menu li {
     list-style-position: outside;
     list-style-type: none;
+}
+
+.btnClear {
+    text-align: center;
 }
 
 .footer__menu__names {
     margin-bottom: 15px;
     margin-top: 20px;
 }
+
 .footer__menu__names:nth-child(2) {
     margin-left: 20%;
 }
+
 .footer__menu__names a
 {
     text-align: center;

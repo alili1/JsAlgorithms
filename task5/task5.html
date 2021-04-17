@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="дерево, алгоритмы на дереве">
+    <meta name="description" content="Дерево решений">
+    <title>Дерево решений</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../task5/css/task5.css">
+</head>
+
+<body onLoad="">
+<div class="wrapper">
+<main class="mainActivityFiveTask">
+    <h1>
+        Дерево решений
+    </h1>
+    <hr class="firstLine"/>
+    <div class="mainContent">
+        <div class="titleOfField">
+            <h3>
+                Здесь вырастет ваше дерево!
+            </h3>
+        </div>
+        <div class="fieldToDraw" id="toDraw" onload="draw();">
+            <canvas id="pointField"  width="1000" height="600"></canvas>
+        </div>
+        <div class="titleOfInputNumber">
+            <h4>
+                Введите текст
+            </h4>
+        </div>
+        <div class="inputField">
+            <input class="inputYourNumber" type="number" placeholder="Ваше число" id="inputNumber" value="3">
+            <input type="button" value="Отправить" onclick="createNumber()">
+        </div>
+        <div class="butOfStart">
+            <button class="btn, pushOnMe" onclick="Start()">
+                Начать поиск по дереву
+            </button>
+        </div>
+        <div class="toOtherPage">
+            <h4>
+                Алгоритмы
+            </h4>
+        </div>
+        <div class="sidebar">
+            <ul class="sidebar__menu">
+                <li>
+                    <a class="toMain" href="../mainView.html">
+                        На главную
+                    </a>
+                <li>
+                    <a href = "../task1/task1.html">
+                        A*
+                    </a>
+                </li>
+                <li>
+                    <a href = "../task2/task2.html">
+                        Алгоритм кластеризации
+                    </a>
+                </li>
+                <li>
+                    <a href = "../task3/task3.html">
+                        Генетический алгоритм
+                    </a>
+                </li>
+                <li>
+                    <a href = "../task4/task4.html">
+                       Муравьиный алгоритм
+                    </a>
+                </li>
+                <li>
+                    <a href = "../task6/task6.html">
+                        Нейронная сеть
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="btnClear">
+            <button class="btn, pushOnMeSecond" onClick="window.location.reload()">
+                Стереть дерево
+            </button>
+        </div>
+    </div>
+
+</main>
+</div>
+<footer class="footer">
+    <hr class="secondLine"/>
+    <div class = "container">
+        <div class="row" >
+            <ul class="footer__menu d-flex justify-content-center">
+                <li class="footer__menu__names">
+                    <a href="https://vk.com/unrrravel">
+                        По любым вопросам!
+                    </a>
+                </li>
+                <li class="footer__menu__names">
+                    <a href="https://vk.com/maxim__tkachev">
+                        Гений алгоритмов
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>

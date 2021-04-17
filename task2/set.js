@@ -48,7 +48,6 @@ function Start()
         matches.push(NumOfMax);
     }
 
-    alert(matches);
     for(let i = 0; i < points.length; i++)
     { 
         context.beginPath();
@@ -95,5 +94,4 @@ function Start()
             */
         }
     }
-    console.log(matches);
 }

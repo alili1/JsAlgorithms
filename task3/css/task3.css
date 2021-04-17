@@ -1,14 +1,26 @@
+body,
+html {
+    background: url("../../img/fons/webb-dark.png") repeat;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 80px;
+}
+
+footer {
+    height: 80px;
+    margin-top: -80px;
+}
 .mainActivityThirdTask, .footer {
-    background: url("../../img/fons/webb-dark.png");
+    background: url("../../img/fons/webb-dark.png") repeat;
     padding-top: 30px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #c6d6e2;
 }
 .mainActivityThirdTask {
     padding-bottom: 30px;
-}
-
-body {
-    font-family: 'Nanum Gothic', sans-serif;
-    color: #c6d6e2;
 }
 
 h1 {
@@ -32,12 +44,9 @@ h3 {
 }
 
 h4 {
+    text-align: center;
     font-weight: lighter;
     color: #f5f8ff;
-}
-
-h4.menu {
-    text-align: center;
 }
 
 .mainContent {
@@ -47,7 +56,7 @@ h4.menu {
     grid-auto-rows: auto;
 
 }
-.box1 {
+.titleOfField {
     margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -55,7 +64,11 @@ h4.menu {
     grid-row-end: 2;
 }
 
-.box2 {
+h3.titleOfField {
+    text-align: left;
+}
+
+.fieldToDraw {
     margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -63,51 +76,29 @@ h4.menu {
     grid-row-end: 12;
 }
 
-.box3, .box4, .box5, .box6, .box7, .box8, .box9, .box71 {
+.buttonStart, .nameOfOutputFirst, .outputFirst, .nameOfOutputSecond, .outputSecond, .btnClear, .toOtherPage, .sidebar {
     margin-left: 5%;
     margin-right: 5%;
 }
-.box3, .box5, .box4, .box6 {
+
+.buttonStart, .nameOfOutputFirst, .outputFirst, .nameOfOutputSecond, .outputSecond, .btnClear, .toOtherPage:first-child {
     text-align: center;
 }
 
-#start {
-    font-size: 16px;
-    background-color: #f5f8ff;
-    margin-left: 5px;
-    border-radius: 4%;
-    border: 3px solid #a0aebe;
-}
-.box4 {
+.nameOfOutputFirst {
     margin-top: 20px;
-    padding-bottom: 5px;
     margin-bottom: 5px;
+    padding-bottom: 5px;
 }
 
-#rezult {
-    font-size: 16px;
-    background-color: #f5f8ff;
-    margin-left: 5px;
-    border-radius: 4%;
-    border: 3px solid #a0aebe;
-}
-.box5 {
-     margin-top: 10px;
-     margin-bottom: 20px;
-     text-align: center;
- }
-
-.box7 {
+.outputFirst {
     margin-top: 10px;
     margin-bottom: 20px;
-    text-align: center;
 }
 
-.box71 {
+.outputSecond, .btnClear {
     margin-top: 10px;
     margin-bottom: 20px;
-    font-size: 20px;
-    text-align: center;
 }
 
 .toOtherPage {
@@ -116,9 +107,12 @@ h4.menu {
     border-bottom: ridge #f5f8ff;
 }
 
-.toOtherPage:nth-child(1)
-{
-    text-align: center;
+#start, #result {
+    margin-left: 5px;
+    border-radius: 4%;
+    background-color: #f5f8ff;
+    border: 3px solid #a0aebe;
+    font-size: 16px;
 }
 
 #graphField {
@@ -128,12 +122,12 @@ h4.menu {
 }
 
 .btn {
-    color: #960912;
-    background-color: #f5f8ff;
     margin-left: 5px;
     border-radius: 4%;
+    cursor: pointer;
     border: 3px solid #960912;
-    cursor: pointer; /* Pointer/hand icon */
+    background-color: #f5f8ff;
+    color: #960912;
 }
 
 button:focus {
@@ -146,9 +140,9 @@ button:focus {
     padding-right: 5%;
     padding-top: 20px;
     text-align: left;
-    height: auto; /* Full-height: remove this if you want "auto" height */
+    height: auto;
     border: 4px solid #718296;
-    background-color: #f5f8ff; /* Black */
+    background-color: #f5f8ff;
 }
 
 .sidebar__menu a {
@@ -158,6 +152,7 @@ button:focus {
     color: #78899f;
     text-decoration: none;
 }
+
 a.toMain {
     font-size: 20px;
 }

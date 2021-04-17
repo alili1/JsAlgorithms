@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,50 +14,48 @@
 <body>
 <script src="preparation.js"></script>
 <script src="AStar.js"></script>
+<div class="wrapper">
 <main class="mainActivityFirstTask">
-  <h1 class="mainName" align="center">
+  <h1>
     Лабиринт
   </h1>
-  <hr class="firstLine"/> <!-- почему такая маленькая ширина линии? -->
+  <hr class="firstLine"/>
   <div class="mainContent">
-    <div class="box1">
-      <h3 class="field">
+    <div class="titleOfField">
+      <h3>
         Поле для игры
       </h3>
     </div>
-    <div class="box2" id="toDraw" onload="draw();">
+    <div class="fieldToDraw" id="toDraw" onload="draw();">
       <canvas id="pointField" width="950" height="950"> </canvas>
     </div>
-    <div class="box3">
-      <h5 class="secondName" align="center">
-        Введите размеры поля в виде целого числа от 15 до 55
+    <div class="titleOfInput">
+      <h5>
+        Введите размеры поля в виде нечетного целого числа от 15 до 55
       </h5>
     </div>
-    <div class="box4" align="center">
-        <input class="size" type="number" placeholder="Ваше число" id="inputNumber" value="15">
+    <div class="inputOfSizeField" align="center">
+        <input class="sizeOfField" type="number" placeholder="Ваше число" id="inputNumber" value="15"/>
       <input type="button" value="Отправить" onclick="CreateMaze()">
     </div>
-    <div class="box5" align="center">
-      <button class="btn" id="but1" onclick="ChangingStart()">
+    <div class="buttonPlus">
+      <button class="btn" id="plusStart" onclick="ChangingStart()">
         Добавить стартовую клетку
       </button>
       <br>
-      <button class="btn" id="but2" onclick="ChangingStop()">
+      <button class="btn" id="plusFinish" onclick="ChangingStop()">
         Добавить конечную клетку
       </button>
       <br>
-      <button class="btn" id="but3" onclick="A()">
-        начни свой путь!
+      <button class="btn" id="toStart" onclick="A()">
+        Начни свой путь!
       </button>
     </div>
-    <div class="box6">
       <div class="toOtherPage">
         <h4>
           Алгоритмы
         </h4>
       </div>
-    </div>
-    <div class="box7">
       <div class="sidebar">
         <ul class="sidebar__menu">
           <li>
@@ -93,8 +90,8 @@
         </ul>
       </div>
     </div>
-  </div><!-- почему такая маленькая ширина линии? -->
 </main>
+</div>
 <footer class="footer">
   <hr class="secondLine"/>
   <div class = "container">

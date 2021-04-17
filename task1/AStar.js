@@ -8,98 +8,110 @@ class Node
         this.parentY = parentY;
         this.way = way;
         this.manhattan = manhattan;
-        this.weight = way + manhattan;
     }
-    GetWeight()
-    {
-        this.weight = this.manhattan + this.way;
-    }
+}
+function GoBack()
+{
+    console.log(Current.parentX, Current.parentY);
+    context.fillStyle = "#ccccff"
+    context.fillRect(SizeOfCell*Current.x, SizeOfCell*Current.y, SizeOfCell, SizeOfCell);
+    Current = Nodes[Current.parentX][Current.parentY];
+    if (Current.x == StartPoint.x && Current.y == StartPoint.y)
+        clearInterval(DrawInterval);
+}
+function ClearMaze()
+{
+    context.fillStyle = "White";
+    for(let i = 0; i < n; i++)
+        for(let j = 0; j < n; j++)
+        {
+            status[i][j] = true;
+            if(!((i == StartPoint.x && j == StartPoint.y)||(i == StopPoint.x && j == StopPoint.y)))
+                context.fillRect(SizeOfCell*i, SizeOfCell*j, SizeOfCell, SizeOfCell);
+        }
 }
 let AInterval;
+let DrawInterval;
+let Current;
 function search()
 {
-        min = Open[0].manhattan;
-        NumOfMin = 0;
-        for(let i = 1; i < Open.length; i++)
+    if(Open.length == 0)
+    {
+        alert("Пути нет");
+        clearInterval(AInterval);         
+        return;    
+    }
+    min = Open[0].manhattan;
+    NumOfMin = 0;
+    for(let i = 1; i < Open.length; i++)
+    {
+        if(Open[i].manhattan < min)
         {
-            if(Open[i].manhattan < min)
-            {
-                min = Open[i].manhattan;
-                NumOfMin = i;
-            }
+            min = Open[i].manhattan;
+            NumOfMin = i;
         }
-        
-        Active = Open[NumOfMin];
-        if (Active.x == StopPoint.x && Active.y == StopPoint.y)
+    }
+    
+    Active = Open[NumOfMin];
+    if (Active.x == StopPoint.x && Active.y == StopPoint.y)
+    {            
+        context.fillStyle = "Yellow";
+        context.fillRect(SizeOfCell*StartPoint.x, SizeOfCell*StartPoint.y, SizeOfCell, SizeOfCell);
+        Current = Nodes[Active.parentX][Active.parentY];
+        clearInterval(AInterval);
+
+        DrawInterval = setInterval(function()
         {
-            alert("Путь найден");
-            context.fillStyle = "Yellow";
-            context.fillRect(SizeOfCell*StartPoint.x, SizeOfCell*StartPoint.y, SizeOfCell, SizeOfCell);
+            GoBack();
+        }, 20);
+        context.fillStyle = "#e34234";
+        context.fillRect(SizeOfCell*StopPoint.x, SizeOfCell*StopPoint.y, SizeOfCell, SizeOfCell);
+        Changing = true;
+        return;
+    }
+    Open.splice(NumOfMin, 1);
+    IsClosed[Active.x][Active.y] = true;
+    context.fillStyle = "#98ff98";
+    context.fillRect(SizeOfCell*Active.x, SizeOfCell*Active.y, SizeOfCell, SizeOfCell);
 
-            
-            let Current = new Cell(Active.x, Active.y);
-            let Copy = new Cell();
-            clearInterval(AInterval);
-            do
-            {
-                console.log(Current.x, Current.y);
-                //console.log(Current.y);
-                context.fillStyle = "#ccccff"
-                context.fillRect(SizeOfCell*Current.x, SizeOfCell*Current.y, SizeOfCell, SizeOfCell);
-                Copy.x = Nodes[Current.x][Current.y].parentX;
-                Copy.y = Nodes[Current.x][Current.y].parentY;
-                Current=Copy;
-            } while(Current.x != StartPoint.x || Current.y != StartPoint.y)
-
-            context.fillStyle = "#e34234";
-            context.fillRect(SizeOfCell*StopPoint.x, SizeOfCell*StopPoint.y, SizeOfCell, SizeOfCell);
-            
-            return;
-        }
-        Open.splice(NumOfMin, 1);
-        IsClosed[Active.x][Active.y] = true;
-        context.fillStyle = "#98ff98";
-        context.fillRect(SizeOfCell*Active.x, SizeOfCell*Active.y, SizeOfCell, SizeOfCell);
-
-        let moveX = [1, -1, 0, 0];
-        let moveY = [0, 0, 1, -1];
-        for(let i = 0; i < 4; i++)
+    let moveX = [1, -1, 0, 0];
+    let moveY = [0, 0, 1, -1];
+    for(let i = 0; i < 4; i++)
+    {
+        if(Active.x + moveX[i] >= 0 && Active.x + moveX[i] < n && Active.y + moveY[i] >= 0 && Active.y + moveY[i] < n)
         {
-            if(Active.x + moveX[i] >= 0 && Active.x + moveX[i] < n && Active.y + moveY[i] >= 0 && Active.y + moveY[i] < n)
+            if(status[Active.x + moveX[i]][Active.y + moveY[i]] == true)
             {
-                if(status[Active.x + moveX[i]][Active.y + moveY[i]] == true)
+                temp = Active.way + 1;
+                if (IsClosed[Active.x + moveX[i]][Active.y + moveY[i]] == false || temp < Nodes[Active.x + moveX[i]][Active.y + moveY[i]].way) //добавить условие перезаписи
                 {
-                    temp = Active.way + 1;
-                    if (IsClosed[Active.x + moveX[i]][Active.y + moveY[i]] == false || temp < Nodes[Active.x + moveX[i]][Active.y + moveY[i]].way) //добавить условие перезаписи
+                    if(IsOpen[Active.x + moveX[i]][Active.y + moveY[i]] == true)
                     {
-                        
-                        if(IsOpen[Active.x + moveX[i]][Active.y + moveY[i]] == true)
-                        {
-                            Nodes[Active.x + moveX[i]][Active.y + moveY[i]].parentX = Active.x;
-                            Nodes[Active.x + moveX[i]][Active.y + moveY[i]].parentY = Active.y;
-                            Nodes[Active.x + moveX[i]][Active.y + moveY[i]].way = Active.way + 1;
-                            Nodes[Active.x + moveX[i]][Active.y + moveY[i]].manhattan = Math.abs(StopPoint.x - Active.x) + Math.abs(StopPoint.y - Active.y);
-                            Nodes[Active.x + moveX[i]][Active.y + moveY[i]].GetWeight();
-                        }
-                        else
-                        {
-                            Nodes[Active.x + moveX[i]][Active.y + moveY[i]] = new Node(Active.x + moveX[i], Active.y + moveY[i], Active.way + 1, Math.abs(StopPoint.x - Active.x) + Math.abs(StopPoint.y - Active.y), Active.x, Active.y);
-                            Open.push(Nodes[Active.x + moveX[i]][Active.y + moveY[i]]);
-                        }
+                        Nodes[Active.x + moveX[i]][Active.y + moveY[i]].parentX = Active.x;
+                        Nodes[Active.x + moveX[i]][Active.y + moveY[i]].parentY = Active.y;
+                        Nodes[Active.x + moveX[i]][Active.y + moveY[i]].way = Active.way + 1;
+                        Nodes[Active.x + moveX[i]][Active.y + moveY[i]].manhattan = Math.abs(StopPoint.x - Active.x) + Math.abs(StopPoint.y - Active.y);
                     }
-                } 
-            }
-        } 
+                    else
+                    {
+                        IsOpen[Active.x + moveX[i]][Active.y + moveY[i]] = true;
+                        Nodes[Active.x + moveX[i]][Active.y + moveY[i]] = new Node(Active.x + moveX[i], Active.y + moveY[i], Active.way + 1, Math.abs(StopPoint.x - Active.x) + Math.abs(StopPoint.y - Active.y), Active.x, Active.y);
+                        Open.push(Nodes[Active.x + moveX[i]][Active.y + moveY[i]]);
+                    }
+                }
+            } 
+        }
+    } 
 }
-let Nodes = [];
+let Nodes;
 let Active;  
-let IsOpen = [];
-let IsClosed = [];
+let IsOpen;
+let IsClosed;
 let min, NumOfMin, temp;
-let Open = [];
+let Open;
 function A()
 {
-    ChangeMaze = false;
+    Changing = false;
     for(let i = 0; i < n; i++)
     {
         IsOpen[i]=[];
@@ -112,16 +124,11 @@ function A()
         Nodes[i] = [];
     }
 
-
-    Open.push(new Node(StartPoint.x, StartPoint.y, 0, Math.abs(StopPoint.x - StartPoint.x) + Math.abs(StopPoint.y - StartPoint.y)));
     IsOpen[StartPoint.x][StartPoint.y] = true;
-    Nodes[StartPoint.x][StartPoint.y] = Open[0];
-
-    //while(Open.length > 0)
-    //{
-        AInterval = setInterval(function()
-        {
-            search();
-        }, 35);
-    //}
+    Nodes[StartPoint.x][StartPoint.y] = new Node(StartPoint.x, StartPoint.y, 0, Math.abs(StopPoint.x - StartPoint.x) + Math.abs(StopPoint.y - StartPoint.y));
+    Open.push(Nodes[StartPoint.x][StartPoint.y]);
+    AInterval = setInterval(function()
+    {
+        search();
+    }, 35);
 }

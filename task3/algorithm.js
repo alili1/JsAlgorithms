@@ -1,9 +1,9 @@
+const pointOfBreak = 3;
+const mutationChance = 50;
 let numberOfPoints = 0;
 let startNumberOfPath = 1;
 let result = 0;
-let pointOfBreak = 3;
 let sizeWorkgroup = 0;
-let mutationChance = 50;
 let watchChanges = 0;
 let currentChange = 1;
 let firstPath = [];
@@ -36,9 +36,9 @@ function toDoSizeWrGroup() {
     if (startNumberOfPath < 100)
         sizeWorkgroup = startNumberOfPath;  /* ищет не самый лучший путь */
     else if (startNumberOfPath < 1000000)
-        sizeWorkgroup = Math.ceil(startNumberOfPath/100);
+        sizeWorkgroup = Math.ceil(startNumberOfPath/10);
     else if (startNumberOfPath < 100000000)
-        sizeWorkgroup = Math.ceil(startNumberOfPath/100000);
+        sizeWorkgroup = Math.ceil(startNumberOfPath/8);
 
 }
 
@@ -183,10 +183,8 @@ function insert (child){
     }
     else if (workGroup[i][numberOfPoints] == child[numberOfPoints]) /* что делать если длины путей равны?? */
     {
-        workGroup.splice(sizeWorkgroup-1, 1);
-        workGroup.splice(i, 0, child);
-        watchChanges = 0;
-        currentChange++;
+        watchChanges++;
+        currentChange = 1;
     }
     else {
         workGroup.splice(sizeWorkgroup-1, 1);

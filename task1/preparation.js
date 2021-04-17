@@ -1,23 +1,28 @@
     const COLOR_White = "#f5f8ff";
-    var canvas;
-    var context;
+    var canvas, context;
     let numberBut = document.getElementById('inputBut');
     let Changing = true;
     let status;
-    let visited;
-    let unvisited;
-    let StartPoint;
-    let StopPoint;
-    var n;
-    var SizeOfCell;
-    let ChangeStart = false;
-    let ChangeStop = false;
+    let visited, unvisited;
+    let StartPoint, StopPoint;
+    var n, SizeOfCell;
+    let ChangeStart, ChangeStop;
 
+    function init()
+    {
+        ChangeStart = false;
+        ChangeStop = false;
+        Nodes = [];
+        IsOpen = [];
+        IsClosed = [];
+        Open = [];
+    }
     function ChangingStart()
     {
         //alert("Изменение старта");
         ChangeStart = true;
     }
+
     function ChangingStop()
     {
         //alert("Изменение стопа");
@@ -36,7 +41,7 @@
         {
             let x = Math.floor((e.pageX - canvas.offsetLeft)/SizeOfCell);
             let y = Math.floor((e.pageY - canvas.offsetTop)/SizeOfCell);
-            if(ChangeStart == true)
+            if (ChangeStart == true)
             {
                 context.fillStyle = "White";
                 status[x][y] = true;
@@ -53,7 +58,7 @@
             }
             else
             {
-                if(ChangeStop == true)
+                if (ChangeStop == true)
                 {
                     context.fillStyle = "White";
                     status[x][y] = true;
@@ -72,7 +77,7 @@
                 {
                     if (ChangeStart == false && ChangeStop == false)
                     {
-                        if ((x != StartPoint.x && x != StopPoint.x) || (y != StartPoint.y && y != StopPoint.y))
+                        if (!((x == StartPoint.x && y == StartPoint.y) || ( x == StopPoint.x && y == StopPoint.y)))
                         {
                             context.beginPath();
                             context.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
@@ -119,9 +124,6 @@
             this.y=y;
         }
     }
-    let DrawingMaze = true;
-    let ChangeMaze = false;
-    let Visualization = false;
     function randomInteger(min, max) 
     {
         let rand = min - 0.5 + Math.random() * (max - min + 1);
@@ -129,7 +131,6 @@
     }
     function getNeighbours(cell, n)
     {        
-       
         let up = new Cell(cell.x, cell.y-2);
         let dw = new Cell(cell.x, cell.y+2);
         let rt = new Cell(cell.x+2, cell.y);
@@ -160,11 +161,11 @@
         visited[CellB.x][CellB.y]=true;
         unvisited--;
     }
-
    function CreateMaze()
    {
+        init();
         n = document.getElementById('inputNumber').value;
-        SizeOfCell = 950/n;
+        SizeOfCell = Math.floor(950/n);
         status = [];
         visited = [];
         unvisited = -1;
@@ -205,11 +206,6 @@
             {
                 if (stack.length > 0)            
                     CurrentCell=stack.pop();
-                else
-                {
-                    //добавить функцию
-                    alert("У нас проблемы"); 
-                }
             }
         } while(unvisited > 0);
 

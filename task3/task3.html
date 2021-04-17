@@ -12,56 +12,52 @@
 </head>
 
 <body>
+<div class="wrapper">
 <main class="mainActivityThirdTask">
-    <h1 class="mainName">
+    <h1>
         Генетический алгоритм
     </h1>
-    <hr class="firstLine"/> <!-- почему такая маленькая ширина линии? -->
+    <hr class="firstLine"/>
     <div class="mainContent">
-        <div class="box1">
-            <h4 class="field">
+        <div class="titleOfField">
+            <h3>
                 Построение графа
-            </h4>
+            </h3>
         </div>
-        <div class="box2" id="toDraw">
-              <canvas id="graphField" width="1000" height="600">
-
-            </canvas>
+        <div class="fieldToDraw" id="toDraw">
+              <canvas id="graphField" width="1000" height="600"></canvas>
         </div>
-        <div class="box3">
+        <div class="buttonStart">
             <button class="btn" id="startWork" onclick="preparations()">
                 Начать построение пути
             </button>
         </div>
-        <div class="box4">
-            <h4 class="secondName">
+        <div class="nameOfOutputFirst">
+            <h4>
                 Длина последовательного пути
             </h4>
         </div>
-        <div class="box5" align="center">
-            <input id="start" value="Длина пути"/>
+        <div class="outputFirst">
+            <input id="start"/>
         </div>
-        <div class="box6">
-            <h4 class="secondName">
+        <div class="nameOfOutputSecond">
+            <h4>
             Длина текущего пути
-        </h4>
+            </h4>
         </div>
-        <div class="box7" align="center">
-            <input id="rezult" value="Длина пути"/>
+        <div class="outputSecond">
+            <input id="result"/>
         </div>
-        <div class="box71" align="center">
+        <div class="btnClear">
             <button class="btn" id="endWork" onClick="window.location.reload()">
                 Очистить все поле
             </button>
         </div>
-        <div class="box8">
             <div class="toOtherPage">
               <h4>
                   Алгоритмы
               </h4>
             </div>
-        </div>
-        <div class="box9">
             <div class="sidebar">
                 <ul class="sidebar__menu">
                     <li>
@@ -69,13 +65,13 @@
                             На главную
                         </a>
                     <li>
-                        <a href = "../task2/task2.html">
-                            Алгоритм кластеризации
+                        <a href = "../task1/task1.html">
+                            А*
                         </a>
                     </li>
                     <li>
-                        <a href = "../task3/task3.html">
-                            Генетический алгоритм
+                        <a href = "../task2/task2.html">
+                            Алгоритм кластеризации
                         </a>
                     </li>
                     <li>
@@ -96,8 +92,8 @@
                 </ul>
             </div>
         </div>
-    </div><!-- почему такая маленькая ширина линии? -->
 </main>
+</div>
 <footer class="footer">
     <hr class="secondLine"/>
     <div class = "container">

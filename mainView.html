@@ -1,4 +1,4 @@
-а  можешь скинуть окончательные варианты кластеризации и <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mainViewStyle.css">
 </head>
-<body>
+<div class="wrapper">
   <header id="header" class="header">
       <div class = "container">
        <div class="row" >
            <ul class="menu d-flex justify-content-center">
                <li class="menu__first">
                    <a href="http://hits.tsu.ru/">
-                       Высшая IT школа <!-- почему не по центру относительно фото? -->
+                       Высшая IT школа
                    </a>
                </li>
                <li class="menu__first ">
@@ -34,8 +34,8 @@
        </div>
    </div>
       <hr class="line"/>
-      <h4 class="sources">
-         Полезные статьи <!-- почему не по центру относительно фото? -->
+      <h4>
+         Полезные статьи
       </h4>
       <div class="container">
           <div class="col-lg-12 ml-auto">
@@ -43,33 +43,32 @@
               <ul class="menuImg d-flex justify-content-center">
                   <li class="menuImg__second d-flex align-items-center">
                       <a href="#">
-                          <img src="img/mainImage/aStar.jpg" class="dnk" title="А*">
+                          <img src="img/mainImage/aStar.jpg" class="image" title="А*">
                       </a>
                   </li>
                   <li class="menuImg__second d-flex align-items-center">
                       <a href="#">
-                          <img src="img/mainImage/cluster.jpg" class="dnk" title="Алгоритм кластеризации">
+                          <img src="img/mainImage/cluster.jpg" class="image" title="Алгоритм кластеризации">
+                      </a>
+                  </li>
+                  <li class="menuImg__second d-flex align-items-center">
+                      <a href="http://www.100byte.ru/100btwrks/tsp/tsp.html">
+                          <img src="img/mainImage/DNA.jpg" class="image" title="Генетический алгоритм">
                       </a>
                   </li>
                   <li class="menuImg__second d-flex align-items-center">
                       <a href="#">
-                          <img src="img/mainImage/DNA.jpg" class="dnk" title="Генетический алгоритм">
+                          <img src="img/mainImage/tree.jpg" class="image" title="Дерево решений">
                       </a>
                   </li>
                   <li class="menuImg__second d-flex align-items-center">
-                      <a href="#">
-                          <img src="img/mainImage/tree.jpg" class="dnk" title="Дерево решений">
-                      </a>
-                  </li>
-                  <li class="menuImg__second d-flex align-items-center">
-                      <a href="#">
-                          <img src="img/mainImage/neuralNetwork.jpg" class="dnk" title="Нейронные сети">
+                      <a href="https://proglib.io/p/neural-network-course">
+                          <img src="img/mainImage/neuralNetwork.jpg" class="image" title="Нейронные сети">
                       </a>
                   </li>
               </ul>
           </nav>
           </div>
-      </div>
       </div>
   </header>
   <main class="mainAct">
@@ -105,17 +104,16 @@
                   Дерево решений
               </a>
           </li>
-          <li>
-          <a href = "task6/task6.html">
-                  Нейронная сеть
-              </a>
-          </li>
+           <li>
+               <a href = "task6/task6.html">
+                   Нейронная сеть
+               </a>
+           </li>
       </ul>
           </div>
       </div>
-      </div>
   </main>
-
+</div>
 <footer class="footer">
     <hr class="line"/>
     <div class = "container">
